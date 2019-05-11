@@ -58,6 +58,23 @@ li.list-group-item {
     padding: 10px;
 }
 
+@media (max-width: 600px) {
+    h1.tim-Header {
+        text-align: left;
+        font-size: 48px;
+        font-family: 'Istok Web', sans-serif;
+        color: whitesmoke;
+    }
+
+    small.tim-Header {
+        text-align: left;
+        font-size: 20px;
+        font-family: 'Istok Web', sans-serif;
+        color: whitesmoke;
+        opacity: .9;
+    }
+}
+
 
 /*Resume Specific Styles*/
 
