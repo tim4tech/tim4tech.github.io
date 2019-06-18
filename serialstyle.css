@@ -1,0 +1,13 @@
+body {
+    background-image: url("sodakbak.jpg"); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 40px;
+    color: whitesmoke;
+}
+
+.text-main {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(10, 10, 10, 0.5);
+}
