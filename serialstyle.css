@@ -1,6 +1,7 @@
 body {
     background-image: url("sodakbak.jpg"); 
     background-repeat: no-repeat;
+    background-color: black;
     background-size: 100%;
     padding: 40px;
     color: whitesmoke;
