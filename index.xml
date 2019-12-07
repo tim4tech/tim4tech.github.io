@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Timothy Ford</title>
-    <link>http://www.timothywford.com/</link>
+    <link>timothywford.com/</link>
     <description>Recent content on Timothy Ford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="http://www.timothywford.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="timothywford.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About Me</title>
-      <link>http://www.timothywford.com/about/</link>
+      <link>timothywford.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.timothywford.com/about/</guid>
+      <guid>timothywford.com/about/</guid>
       <description>I study Applied Mathematics &amp;amp; Computer Science at South Dakota School of Mines and Technology.
 What I spend my time on:
  Mountain Biking Ultimate Frisbee Data Analysis School   Experience Co-Founder/CTO - HomeMetricsLLC
@@ -26,19 +26,19 @@ What I spend my time on:
     
     <item>
       <title>Contact</title>
-      <link>http://www.timothywford.com/contact/</link>
+      <link>timothywford.com/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.timothywford.com/contact/</guid>
+      <guid>timothywford.com/contact/</guid>
       <description>Email timothy.ford@mines.sdsmt.edu</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>http://www.timothywford.com/projects/</link>
+      <link>timothywford.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://www.timothywford.com/projects/</guid>
+      <guid>timothywford.com/projects/</guid>
       <description>HomeMetricsLLC An IoT startup focused on solving catestrophic home failure with intelligent sensor networks.
  MinneMUDAC Fall 2019: Soybeans Participated in the MUDAC Data Analysis competition where my team studied ways to predict soybean index prices.
  Video of the presentation &amp;ndash; LINK WHEN RECORDED Sample Jupyter Notebook &amp;ndash; LINK WHEN PERFECTED Placed 3rd in Novice Division   Undergraduate Research My research has mainly focused on multi-dimensional time series models.</description>
