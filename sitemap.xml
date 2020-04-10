@@ -1,33 +1,144 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>timothywford.com/about/</loc>
+    <loc>http://timothywford.com/project/project1/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/categories/</loc>
+    <loc>http://timothywford.com/project/project2/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/contact/</loc>
+    <loc>http://timothywford.com/project/project3/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/projects/</loc>
+    <loc>http://timothywford.com/project/scikit-multilinear/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/series/</loc>
+    <loc>http://timothywford.com/project/project4/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/</loc>
+    <loc>http://timothywford.com/post/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/</loc>
+    <loc>http://timothywford.com/tags/go/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/golang/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/hugo/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/post/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/themes/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/post/goisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/post/hugoisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/template/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/post/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/static-site-generator/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/google-cloud-platform/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/java/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/jupyter/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/matlab/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/numpy/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/pandas/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/plotly/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/project/</loc>
+  </url>
+  
+  <url>
+    <loc>http://timothywford.com/tags/python/</loc>
   </url>
   
 </urlset>

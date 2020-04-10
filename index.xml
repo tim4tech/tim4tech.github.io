@@ -1,47 +1,113 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Timothy Ford</title>
-    <link>timothywford.com/</link>
+    <link>http://timothywford.com/</link>
     <description>Recent content on Timothy Ford</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="timothywford.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://timothywford.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About Me</title>
-      <link>timothywford.com/about/</link>
+      <title>HomeMetricsLLC</title>
+      <link>http://timothywford.com/project/project1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>timothywford.com/about/</guid>
-      <description>I study Applied Mathematics &amp;amp; Computer Science at South Dakota School of Mines and Technology.
-What I spend my time on:
- Mountain Biking Ultimate Frisbee Data Analysis School   Experience Co-Founder/CTO - HomeMetricsLLC
- (June 2019 to Present)  Research Assistant - South Dakota School of Mines &amp;amp; Technology
- Rapid City, SD (August 2019 to Present)  Software Engineering Intern - Quarq
- Spearfish, SD (May 2019 to Present)  Teaching Assistant - South Dakota School of Mines &amp;amp; Technology</description>
+      <guid>http://timothywford.com/project/project1/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Contact</title>
-      <link>timothywford.com/contact/</link>
+      <title>Personal Website</title>
+      <link>http://timothywford.com/project/project2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>timothywford.com/contact/</guid>
-      <description>Email timothy.ford@mines.sdsmt.edu</description>
+      <guid>http://timothywford.com/project/project2/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Projects</title>
-      <link>timothywford.com/projects/</link>
+      <title>MinneMUDAC Fall 2019</title>
+      <link>http://timothywford.com/project/project3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>timothywford.com/projects/</guid>
-      <description>HomeMetricsLLC An IoT startup focused on solving catestrophic home failure with intelligent sensor networks.
- MinneMUDAC Fall 2019: Soybeans Participated in the MUDAC Data Analysis competition where my team studied ways to predict soybean index prices.
- Video of the presentation &amp;ndash; LINK WHEN RECORDED Sample Jupyter Notebook &amp;ndash; LINK WHEN PERFECTED Placed 3rd in Novice Division   Undergraduate Research My research has mainly focused on multi-dimensional time series models.</description>
+      <guid>http://timothywford.com/project/project3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SciKit-MultiLinear</title>
+      <link>http://timothywford.com/project/scikit-multilinear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://timothywford.com/project/scikit-multilinear/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Undergraduate Research</title>
+      <link>http://timothywford.com/project/project4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://timothywford.com/project/project4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>http://timothywford.com/post/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://timothywford.com/post/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>http://timothywford.com/post/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://timothywford.com/post/goisforlovers/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>http://timothywford.com/post/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://timothywford.com/post/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+    <item>
+      <title>Migrate from Jekyll</title>
+      <link>http://timothywford.com/post/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://timothywford.com/post/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>A little bit about me...</title>
+      <link>http://timothywford.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://timothywford.com/about/</guid>
+      <description> What I spend my time on:  Mountain Biking Ultimate Frisbee Programming School  Experience Co-Founder/CTO - HomeMetricsLLC  June 2019 to Present  Research Assistant - South Dakota School of Mines &amp;amp; Technology  Rapid City, SD August 2019 to Present  Software Engineering Intern - Quarq  Spearfish, SD May 2019 to Present  Teaching Assistant - South Dakota School of Mines &amp;amp; Technology  Rapid City, SD August 2018 to May 2019  Sales Representative - Best Buy  Rapid City, SD Boulder, CO December 2016 to May 2019  </description>
     </item>
     
   </channel>
