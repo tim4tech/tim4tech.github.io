@@ -13,28 +13,28 @@
     
     <item>
       <title>HomeMetricsLLC</title>
-      <link>/project/project1/</link>
+      <link>/project/homemetrics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project1/</guid>
-      <description>Co-Founder and CTO @ HomeMetricsLLC Hi, I am Timothy Ford, one of the founding memebers of HomeMetricsLLC.</description>
+      <guid>/project/homemetrics/</guid>
+      <description>Co-Founder and CTO @ HomeMetricsLLC Hi, I am Timothy Ford, one of the founding members of HomeMetricsLLC.</description>
     </item>
     
     <item>
       <title>Personal Website</title>
-      <link>/project/project2/</link>
+      <link>/project/personalsite/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project2/</guid>
+      <guid>/project/personalsite/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MinneMUDAC Fall 2019</title>
-      <link>/project/project3/</link>
+      <link>/project/mudac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project3/</guid>
+      <guid>/project/mudac/</guid>
       <description></description>
     </item>
     
@@ -49,10 +49,10 @@
     
     <item>
       <title>Undergraduate Research</title>
-      <link>/project/project4/</link>
+      <link>/project/undergradresearch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/project/project4/</guid>
+      <guid>/project/undergradresearch/</guid>
       <description></description>
     </item>
     
@@ -107,7 +107,9 @@ Follow the following steps:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description> What I spend my time on:  Mountain Biking Ultimate Frisbee Programming School  Experience Co-Founder/CTO - HomeMetricsLLC  June 2019 to Present  Research Assistant - South Dakota School of Mines &amp;amp; Technology  Rapid City, SD August 2019 to Present  Software Engineering Intern - Quarq  Spearfish, SD May 2019 to Present  Teaching Assistant - South Dakota School of Mines &amp;amp; Technology  Rapid City, SD August 2018 to May 2019  Sales Representative - Best Buy  Rapid City, SD Boulder, CO December 2016 to May 2019  </description>
+      <description> What I spend my time on: In no particular order, I put a lot of time into the following things:
+ Mountain Biking Ultimate Frisbee Personal Projects School My amazing girlfriend  Experience Co-Founder/CTO - HomeMetricsLLC - June 2019 to Present Visit our website for more details about our product and ways to purchase. See the projects page for more details on what I personally have worked on.
+Research Assistant - SDSM&amp;amp;T - August 2019 to Present Rapid City, SD Software Engineering Intern - Quarq - May 2019 to Present Spearfish, SD Teaching Assistant - SDSM&amp;amp;T - August 2018 to May 2019 Rapid City, SD Sales Representative - Best Buy - December 2016 to May 2019 Rapid City, SD Boulder, CO </description>
     </item>
     
   </channel>
