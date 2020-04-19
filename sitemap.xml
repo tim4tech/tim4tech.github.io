@@ -3,146 +3,146 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>timothywford.com/project/project1/</loc>
+    <loc>/project/project1/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/project/project2/</loc>
+    <loc>/project/project2/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/project/project3/</loc>
+    <loc>/project/project3/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/project/scikit-multilinear/</loc>
+    <loc>/project/scikit-multilinear/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/project/project4/</loc>
+    <loc>/project/project4/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/post/creating-a-new-theme/</loc>
+    <loc>/post/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/go/</loc>
+    <loc>/tags/go/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/golang/</loc>
+    <loc>/tags/golang/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/hugo/</loc>
+    <loc>/tags/hugo/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/themes/</loc>
+    <loc>/tags/themes/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/</loc>
+    <loc>/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/post/goisforlovers/</loc>
+    <loc>/post/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/development/</loc>
+    <loc>/tags/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/post/hugoisforlovers/</loc>
+    <loc>/post/hugoisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/template/</loc>
+    <loc>/tags/template/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/jekyll/</loc>
+    <loc>/tags/jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/post/migrate-from-jekyll/</loc>
+    <loc>/post/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/static-site-generator/</loc>
+    <loc>/tags/static-site-generator/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>timothywford.com/about/</loc>
+    <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/categories/</loc>
+    <loc>/categories/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/github-pages/</loc>
+    <loc>/tags/github-pages/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/google-cloud-platform/</loc>
+    <loc>/tags/google-cloud-platform/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/java/</loc>
+    <loc>/tags/java/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/jupyter/</loc>
+    <loc>/tags/jupyter/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/matlab/</loc>
+    <loc>/tags/matlab/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/numpy/</loc>
+    <loc>/tags/numpy/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/pandas/</loc>
+    <loc>/tags/pandas/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/plotly/</loc>
+    <loc>/tags/plotly/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/project/</loc>
+    <loc>/project/</loc>
   </url>
   
   <url>
-    <loc>timothywford.com/tags/python/</loc>
+    <loc>/tags/python/</loc>
   </url>
   
 </urlset>
