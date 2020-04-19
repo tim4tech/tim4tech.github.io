@@ -2,156 +2,156 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Timothy Ford</title>
-    <link>http://timothywford.com/tags/</link>
+    <link>https://timothywford.com/tags/</link>
     <description>Recent content in Tags on Timothy Ford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://timothywford.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://timothywford.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>go</title>
-      <link>http://timothywford.com/tags/go/</link>
+      <link>https://timothywford.com/tags/go/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/go/</guid>
+      <guid>https://timothywford.com/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>http://timothywford.com/tags/golang/</link>
+      <link>https://timothywford.com/tags/golang/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/golang/</guid>
+      <guid>https://timothywford.com/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>http://timothywford.com/tags/hugo/</link>
+      <link>https://timothywford.com/tags/hugo/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/hugo/</guid>
+      <guid>https://timothywford.com/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>themes</title>
-      <link>http://timothywford.com/tags/themes/</link>
+      <link>https://timothywford.com/tags/themes/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/themes/</guid>
+      <guid>https://timothywford.com/tags/themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>http://timothywford.com/tags/development/</link>
+      <link>https://timothywford.com/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/development/</guid>
+      <guid>https://timothywford.com/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>template</title>
-      <link>http://timothywford.com/tags/template/</link>
+      <link>https://timothywford.com/tags/template/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/template/</guid>
+      <guid>https://timothywford.com/tags/template/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>http://timothywford.com/tags/jekyll/</link>
+      <link>https://timothywford.com/tags/jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/jekyll/</guid>
+      <guid>https://timothywford.com/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>static-site-generator</title>
-      <link>http://timothywford.com/tags/static-site-generator/</link>
+      <link>https://timothywford.com/tags/static-site-generator/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/static-site-generator/</guid>
+      <guid>https://timothywford.com/tags/static-site-generator/</guid>
       <description></description>
     </item>
     
     <item>
       <title>google cloud platform</title>
-      <link>http://timothywford.com/tags/google-cloud-platform/</link>
+      <link>https://timothywford.com/tags/google-cloud-platform/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/google-cloud-platform/</guid>
+      <guid>https://timothywford.com/tags/google-cloud-platform/</guid>
       <description></description>
     </item>
     
     <item>
       <title>java</title>
-      <link>http://timothywford.com/tags/java/</link>
+      <link>https://timothywford.com/tags/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/java/</guid>
+      <guid>https://timothywford.com/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jupyter</title>
-      <link>http://timothywford.com/tags/jupyter/</link>
+      <link>https://timothywford.com/tags/jupyter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/jupyter/</guid>
+      <guid>https://timothywford.com/tags/jupyter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>matlab</title>
-      <link>http://timothywford.com/tags/matlab/</link>
+      <link>https://timothywford.com/tags/matlab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/matlab/</guid>
+      <guid>https://timothywford.com/tags/matlab/</guid>
       <description></description>
     </item>
     
     <item>
       <title>numpy</title>
-      <link>http://timothywford.com/tags/numpy/</link>
+      <link>https://timothywford.com/tags/numpy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/numpy/</guid>
+      <guid>https://timothywford.com/tags/numpy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pandas</title>
-      <link>http://timothywford.com/tags/pandas/</link>
+      <link>https://timothywford.com/tags/pandas/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/pandas/</guid>
+      <guid>https://timothywford.com/tags/pandas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plotly</title>
-      <link>http://timothywford.com/tags/plotly/</link>
+      <link>https://timothywford.com/tags/plotly/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/plotly/</guid>
+      <guid>https://timothywford.com/tags/plotly/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>http://timothywford.com/tags/python/</link>
+      <link>https://timothywford.com/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://timothywford.com/tags/python/</guid>
+      <guid>https://timothywford.com/tags/python/</guid>
       <description></description>
     </item>
     
