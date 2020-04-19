@@ -1,60 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Timothy Ford</title>
-    <link>/</link>
-    <description>Recent content on Timothy Ford</description>
+    <title>golang on Timothy Ford</title>
+    <link>/tags/golang/</link>
+    <description>Recent content in golang on Timothy Ford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>HomeMetricsLLC</title>
-      <link>/project/homemetrics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/project/homemetrics/</guid>
-      <description>Co-Founder and CTO @ HomeMetricsLLC Hi, I am Timothy Ford, one of the founding members of HomeMetricsLLC.</description>
-    </item>
-    
-    <item>
-      <title>Personal Website</title>
-      <link>/project/personalsite/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/project/personalsite/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MinneMUDAC Fall 2019</title>
-      <link>/project/mudac/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/project/mudac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SciKit-MultiLinear</title>
-      <link>/project/scikit-multilinear/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/project/scikit-multilinear/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Undergraduate Research</title>
-      <link>/project/undergradresearch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/project/undergradresearch/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Creating a New Theme</title>
@@ -99,17 +54,6 @@ Follow the following steps:
       <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
 ▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
 ▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
-    </item>
-    
-    <item>
-      <title>A little bit about me...</title>
-      <link>/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description> What I spend my time on: In no particular order, I put a lot of time into the following things:
- Mountain Biking Ultimate Frisbee Personal Projects School My amazing girlfriend  Experience Co-Founder/CTO - HomeMetricsLLC - June 2019 to Present Visit our website for more details about our product and ways to purchase. See the projects page for more details on what I personally have worked on.
-Research Assistant - SDSM&amp;amp;T - August 2019 to Present Rapid City, SD Software Engineering Intern - Quarq - May 2019 to Present Spearfish, SD Teaching Assistant - SDSM&amp;amp;T - August 2018 to May 2019 Rapid City, SD Sales Representative - Best Buy - December 2016 to May 2019 Rapid City, SD Boulder, CO </description>
     </item>
     
   </channel>
