@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/project/hideouts/</loc>
+  </url>
+  
+  <url>
     <loc>/project/homemetrics/</loc>
   </url>
   
@@ -143,6 +147,10 @@
   
   <url>
     <loc>/tags/python/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/startup-weekend/</loc>
   </url>
   
 </urlset>
