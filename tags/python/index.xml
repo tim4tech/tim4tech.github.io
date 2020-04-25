@@ -6,6 +6,7 @@
     <description>Recent content in python on Timothy Ford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 24 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -45,6 +46,15 @@ Awards/Achievments  Braun Inventor Award 2nd in South Dakota Giant Vision Busine
       
       <guid>/project/undergradresearch/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Welcome and See Basil Grow</title>
+      <link>/post/welcome/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/welcome/</guid>
+      <description>Welcome Hello everyone, if you&amp;rsquo;re here, you probably have a reason to be here as well as a reason to be browsing through. If not, hi. You can learn about what I care about and do in the About page, see some of the projects I work on in Projects, and of course read about my thoughts in Posts. You can find me the places that matter most to me by following the links in the top right.</description>
     </item>
     
   </channel>
