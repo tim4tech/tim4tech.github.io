@@ -5,7 +5,7 @@
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>gardening</title>
+        <title>Cilantro Timelapse</title>
         
         <style>
 
@@ -68,9 +68,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.57.2" />
         
-            <link href="/tags/gardening/index.xml" rel="alternate" type="application/rss&#43;xml" title="Timothy Ford" />
-            <link href="/tags/gardening/index.xml" rel="feed" type="application/rss&#43;xml" title="Timothy Ford" />
-        
 
         
 
@@ -88,7 +85,7 @@
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="#">gardening</a>
+                    <a class="navbar-brand visible-xs" href="#">Cilantro Timelapse</a>
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -129,28 +126,53 @@
 
 <main>
 
-    <h2>gardening</h2>
-
-     <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/post/cilantrostretch/">Cilantro Timelapse</a></h4>
-    <h5>April 27, 2020</h5>
-    
+    <div>
+        <h2>Cilantro Timelapse</h2>
+        <h5>April 27, 2020</h5>
+        
 <a href="/tags/python"><kbd class="item-tag">python</kbd></a>
 
 <a href="/tags/gardening"><kbd class="item-tag">gardening</kbd></a>
 
 
+    </div>
+
+    <div align="start" class="content">
+
+<h1 id="i-m-back-with-cilantro">I&rsquo;m Back with Cilantro</h1>
+
+<p>After recording my initial timelapse of basil, I learned many things that would make the process much easier than the first time. Since my cilantro decided to finally pop through the soil, I decided I would use this knowledge going forward to make yet another timelapse of seedlings, but this time much easier. The first thing I did was used what I thought was a higher quality camera (Logitech c270 I believe). This ended up having minimal impact in my opinion. I look forward to getting an intervelometer for my Nikon D3100 (Thanks Ted!) in the future but for now, this will work. I mounted it somewhat jankily to my tripod and pointed it at my cilantro at about noon. I set the interval to 2 minutes. Looking back, shooting for a higher framerate and taking pictures more frequently would have made sense. Turns out these cilantro babies are pretty active! I also saved the pictures with a different naming scheme that made it WAY easier to use ffmpeg to assemble the timlapse video. I prefixed the images with an <code>h</code>, to represent that they are an herb, and then followed it by the image number padded on the left by 0&rsquo;s. So, for instance, the first image name would be <code>h0001.jpg</code>. Using this naming scheme allowed me to use the wildcard notation on ffmpeg and running this command <code>ffmpeg -framerate 10 -pattern_type glob -i &quot;h*.jpg&quot; -c:v libx264 -crf 0 output.mp4</code> (thanks StackOverflow!) allowed me to assemble a timelapse seemlessly. Below, you can find both the new, slightly modified code to do such as well as the video of the cilantro waving away!</p>
+
+<h1 id="code">Code</h1>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> cv2 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">import</span> time
+
+<span style="color:#75715e"># the index changed to 2 because I am no longer using a built in webcam!</span>
+cam <span style="color:#f92672">=</span> VideoCapture(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">500</span>):
+    s, img <span style="color:#f92672">=</span> cam<span style="color:#f92672">.</span>read()
+    <span style="color:#66d9ef">if</span> s:
+	fname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#f92672">+</span> str(i)<span style="color:#f92672">.</span>rjust(<span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#34;0&#34;</span>)
+        imwrite(<span style="color:#e6db74">&#34;herbs/&#34;</span> <span style="color:#f92672">+</span> fname <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.jpg&#34;</span>,img)
+       
+    time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">120</span>)</code></pre></div>
+
+<h1 id="video">Video</h1>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/PHv1grbZN7U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
 </div>
-  <div class="item">
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
 
     
     
@@ -170,10 +192,12 @@
 
 </div>
  
+    
+
+    
+    
 
 </main>
-
-
 
         <footer>
             <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
