@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Network Creation Models for Social Networks</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: #FFF0F5;
+    }
+
+    :root {
+        --accent: #1E90FF;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.57.2" />
+        
+
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">Network Creation Models for Social Networks</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:tim@home-metrics.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/tim4tech"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/timefordrums/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/timothy-ford-aaab29182/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Network Creation Models for Social Networks</h2>
+        <h5>April 30, 2020</h5>
+        
+<a href="/tags/python"><kbd class="item-tag">python</kbd></a>
+
+<a href="/tags/epidemic-models"><kbd class="item-tag">epidemic-models</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content">
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In order to model how an epidemic spreads throughout a network, you first must have a network for the epidemic to travel through. The following is the beginning of a study on how to create social network models, models that represent the connections shared between people.</p>
+
+<h2 id="erdos-renyi-binomial">Erdos-Renyi (Binomial)</h2>
+
+<h3 id="probability-of-an-edge">Probability of an Edge</h3>
+
+<p>For Erdos-Renyi graph, the probability of an edge is lamda/n where lambda is the mean value of edges for the network. Assuming we want the average agent to have connections to 4 others and we have a group of 20 people, then we get:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+p <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">/</span>n
+
+g <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>erdos_renyi_graph(n, p, seed<span style="color:#f92672">=</span>None, directed<span style="color:#f92672">=</span>False)</code></pre></div>
+
+<p>I wrote the following function to generate a convenient representation of a graph and some info about the degree of it&rsquo;s nodes:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_network_plots</span>(G, pos <span style="color:#f92672">=</span> None):
+    fig, axs <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">12</span>))
+    
+    <span style="color:#75715e"># Degree for Each Node</span>
+    nx_degrees <span style="color:#f92672">=</span> dict(nx<span style="color:#f92672">.</span>degree(G))
+    degrees_from_graph <span style="color:#f92672">=</span> list(nx_degrees<span style="color:#f92672">.</span>values())
+    bin_degrees_from_graph <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">0</span>, len(degrees_from_graph)))
+    axs[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>bar(bin_degrees_from_graph, height<span style="color:#f92672">=</span>degrees_from_graph)
+    axs[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Degree for Each Node&#39;</span>)
+    
+    axs[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_visible(False)
+    
+    <span style="color:#75715e"># Frequency of Node Counts</span>
+    hist_data_preferential <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>degree_histogram(G)
+    bins <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">0</span>, len(hist_data_preferential)))
+    axs[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>bar(bins, height<span style="color:#f92672">=</span>hist_data_preferential)
+    axs[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Frequency of Node Counts&#39;</span>)
+    
+    <span style="color:#66d9ef">if</span> pos <span style="color:#f92672">is</span> None:
+        pos <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>spring_layout(G)
+    <span style="color:#75715e"># Network Graph (Color = Degree)</span>
+    nx<span style="color:#f92672">.</span>draw(G, pos)
+    color_scale <span style="color:#f92672">=</span> generate_color_scale(degrees_from_graph)
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, max(degrees_from_graph)):
+        nodes_of_degree <span style="color:#f92672">=</span> []
+        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(degrees_from_graph)):
+            <span style="color:#66d9ef">if</span> degrees_from_graph[j] <span style="color:#f92672">==</span> i:
+                nodes_of_degree<span style="color:#f92672">.</span>append(j)
+        nx<span style="color:#f92672">.</span>draw_networkx_nodes(G, pos, nodelist<span style="color:#f92672">=</span>nodes_of_degree, node_color<span style="color:#f92672">=</span>color_scale[i])
+    plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;Network Graph (Color = Degree)&#34;</span>)
+        
+    <span style="color:#66d9ef">return</span> fig</code></pre></div>
+
+<p>Which will leave us with the following graph when we apply that function to the Erdos-Renyi Network:</p>
+
+<figure>
+    <img src="/media/erdosRenyi.png"/> <figcaption>
+            <h4>Erdos-Renyi Final Network Plot</h4>
+        </figcaption>
+</figure>
+
+
+<h2 id="configuration-model">Configuration Model</h2>
+
+<p>WIP&hellip;</p>
+
+<h2 id="preferential-attachment-model">Preferential Attachment Model</h2>
+
+<h4 id="algorithm">Algorithm</h4>
+
+<p>Start with a single node, no edges. For each time step, k, add a node with r edges to the network. Each of these r edges are attatched randomly to existing nodes. The probability that an edge connects to a node is based on the degree of the node in question, thus giving preference to nodes with a high degree count already.</p>
+
+<p>Continue the process until there are n nodes in the model.</p>
+
+<h4 id="python-implementation">Python Implementation</h4>
+
+<p>Start by initializing parameters necessary for</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># params</span>
+r <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+n <span style="color:#f92672">=</span> <span style="color:#ae81ff">200</span>
+
+<span style="color:#75715e"># start with single node, no edges</span>
+nodes <span style="color:#f92672">=</span> []
+node_index <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+nodes<span style="color:#f92672">.</span>append(node_index)
+node_index <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+edges <span style="color:#f92672">=</span> []
+degrees <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> n</code></pre></div>
+
+<p>Next, I generate the probabilities of an edge being attatched to a node on a linear scale.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, n)</code></pre></div>
+
+<p>Finally, I assemble the graph using the following algorithm:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">while</span> (node_index <span style="color:#f92672">&lt;</span> n):
+    <span style="color:#75715e"># new node</span>
+    nodes<span style="color:#f92672">.</span>append(node_index)
+    
+    <span style="color:#75715e"># r edges, randomly attatched to existing nodes</span>
+    
+    <span style="color:#75715e"># if we don&#39;t have r nodes yet</span>
+    <span style="color:#66d9ef">if</span> (len(nodes) <span style="color:#f92672">&lt;</span> r):
+        <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> nodes:
+            <span style="color:#66d9ef">if</span> node <span style="color:#f92672">!=</span> node_index:
+                chance <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand()
+                degree_of_node <span style="color:#f92672">=</span> degrees[node]
+            
+                <span style="color:#66d9ef">if</span> (chance <span style="color:#f92672">&gt;</span> p[degree_of_node]):
+                    degrees[node] <span style="color:#f92672">=</span> degree_of_node <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+                    degrees[node_index] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+                    
+                    edge <span style="color:#f92672">=</span> (node_index, node)
+                    
+                    edges<span style="color:#f92672">.</span>append(edge)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,r):
+            <span style="color:#75715e"># get a random node</span>
+            random_node_index <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randint(node_index)
+            node <span style="color:#f92672">=</span> nodes[random_node_index]
+            
+            <span style="color:#66d9ef">if</span> node <span style="color:#f92672">!=</span> node_index:
+                chance <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand()
+                degree_of_node <span style="color:#f92672">=</span> degrees[node]
+            
+                <span style="color:#66d9ef">if</span> (chance <span style="color:#f92672">&gt;</span> p[degree_of_node]):
+                    degrees[node] <span style="color:#f92672">=</span> degree_of_node <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+                    degrees[node_index] <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+                    
+                    edge <span style="color:#f92672">=</span> (node_index, node)
+                    
+                    edges<span style="color:#f92672">.</span>append(edge)
+
+    <span style="color:#75715e"># use the graph for analysis or the below video</span>
+    G <span style="color:#f92672">=</span> nx<span style="color:#f92672">.</span>Graph()
+    G<span style="color:#f92672">.</span>add_nodes_from(nodes)
+    G<span style="color:#f92672">.</span>add_edges_from(edges)
+
+    plots_Pref <span style="color:#f92672">=</span> generate_network_plots(G, pos)
+    fname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;pa&#34;</span> <span style="color:#f92672">+</span> str(node_index)<span style="color:#f92672">.</span>rjust(<span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#34;0&#34;</span>)
+    plots_Pref<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#34;PATH/&#34;</span> <span style="color:#f92672">+</span> fname <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.png&#34;</span>)
+    plt<span style="color:#f92672">.</span>close()
+    
+    node_index <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span></code></pre></div>
+
+<p>Since I create a graph each time, I figured it would be interesting to see what this network being built over time would look like. The above spits out the graphs into a <code>PATH</code> folder of your choosing. With that naming convention, the specifed command will assemble a timelapse for you using <code>ffmpeg</code>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffmpeg -framerate <span style="color:#ae81ff">10</span> -pattern_type glob -i <span style="color:#e6db74">&#34;pa*.png&#34;</span> -c:v libx264 -crf <span style="color:#ae81ff">0</span> output.mp4</code></pre></div>
+
+<p>The above command will create the following output:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/q90Q3af1qW0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="small-world-model">Small World Model</h2>
+
+<p>WIP&hellip;</p>
+
+<h2 id="extra-bits-of-code">Extra Bits of Code</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_color_scale</span>(degrees):
+    color_scale <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(max(degrees)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (max(degrees)) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+            scale <span style="color:#f92672">=</span> int(<span style="color:#ae81ff">255</span> <span style="color:#f92672">*</span> ((i)<span style="color:#f92672">/</span>(max(degrees))))
+        <span style="color:#66d9ef">else</span>:
+            scale <span style="color:#f92672">=</span> <span style="color:#ae81ff">255</span>
+        rgb <span style="color:#f92672">=</span> (scale, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">255</span><span style="color:#f92672">-</span>scale)
+        color_scale<span style="color:#f92672">.</span>append(rgb)
+
+        <span style="color:#66d9ef">if</span> VERBOSE:
+            <span style="color:#66d9ef">print</span>([int(color) <span style="color:#66d9ef">for</span> color <span style="color:#f92672">in</span> rgb])
+            
+    color_scale <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;#</span><span style="color:#e6db74">%02x%02x%02x</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> rgb <span style="color:#66d9ef">for</span> rgb <span style="color:#f92672">in</span> color_scale]
+    <span style="color:#66d9ef">return</span> color_scale</code></pre></div>
+</div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/cilantrostretch/">Cilantro Timelapse</a></h4>
+    <h5>April 27, 2020</h5>
+    
+<a href="/tags/python"><kbd class="item-tag">python</kbd></a>
+
+<a href="/tags/gardening"><kbd class="item-tag">gardening</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/welcome/">Welcome and See Basil Grow</a></h4>
+    <h5>April 24, 2020</h5>
+    
+<a href="/tags/python"><kbd class="item-tag">python</kbd></a>
+
+<a href="/tags/gardening"><kbd class="item-tag">gardening</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+        </footer>
+
+        
+
+        
+    </body>
+
+</html>
+

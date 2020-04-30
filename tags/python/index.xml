@@ -6,7 +6,7 @@
     <description>Recent content in python on Timothy Ford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -46,6 +46,16 @@ Awards/Achievments  Braun Inventor Award 2nd in South Dakota Giant Vision Busine
       
       <guid>/project/undergradresearch/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Network Creation Models for Social Networks</title>
+      <link>/post/networkcreation/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/networkcreation/</guid>
+      <description>Introduction In order to model how an epidemic spreads throughout a network, you first must have a network for the epidemic to travel through. The following is the beginning of a study on how to create social network models, models that represent the connections shared between people.
+Erdos-Renyi (Binomial) Probability of an Edge For Erdos-Renyi graph, the probability of an edge is lamda/n where lambda is the mean value of edges for the network.</description>
     </item>
     
     <item>
