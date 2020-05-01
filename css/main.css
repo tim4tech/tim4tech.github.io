@@ -16,6 +16,7 @@ main {
     max-width: 750px;
     background-image: url("../squaremountainDiff.JPG");
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 img {
