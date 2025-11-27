@@ -1,0 +1,49 @@
+---
+---
+
+// Solarized-inspired palette overrides for minima 2.5.2
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$text-color:       #073642;
+$background-color: #fdf6e3;
+$brand-color:      #268bd2;
+$grey-color:       #93a1a1;
+$grey-color-light: #eee8d5;
+$grey-color-dark:  #586e75;
+
+@import "minima";
+
+a {
+  color: #268bd2;
+}
+
+a:visited {
+  color: #6c71c4;
+}
+
+a:hover {
+  color: #2aa198;
+}
+
+code,
+pre {
+  background-color: #eee8d5;
+  color: #b58900;
+}
+
+pre code {
+  color: inherit;
+}
+
+blockquote {
+  border-color: #cb4b16;
+  color: #586e75;
+  background-color: #fdf6e3;
+}
+
+.social-media-list .unsplash-icon {
+  width: 16px;
+  height: 16px;
+  padding-right: 5px;
+  vertical-align: text-top;
+  display: inline-block;
+}
