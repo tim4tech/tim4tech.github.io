@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![Image](/images/about_header.jpg)
+<img src="/images/about_header.jpeg" alt="me + maui :)" style="max-height:280px; width:auto; max-width:100%; border-radius:20px; box-shadow:0 14px 38px rgba(0, 0, 0, 0.16); display:block; margin:0 auto 28px;">
 
 My name is Timothy Ford, I go by Tim. After growing up in northern Colorado, I moved to the Black Hills of South Dakota and attended SD Mines. Along the way, I managed
 to meet a co-founder in 'Bill' and applied the majority of my junior and senior year focus to the home maintenance startup HomeMetrics. This top-to-bottom, full stack experience accelerated my experience in databases, Android and iOS development, cloud API practices and deployment, and leading teams sizing from small to medium. I'm thankful to professors like Paul Hinker for supporting me and my focus towards learning in such an applied way.
@@ -18,3 +18,5 @@ While I was in Minneapolis, I used the time I spent in my windowless apartment r
 My latest focus is spread between bikes and bike touring (with my dog Maui), building micgrw, fixing my house that's falling apart, finishing my 2004 Chevy Astro camper van build, and chasing upcoming fitness goals. 
 
 Thanks for dropping by. 🙂🚵‍♂️🍩
+
+<img src="/images/made_in_sd.gif" alt="made with ❤️ in SD" style="width:256px; max-width:100%; height:auto; border-radius:20px; display:block; margin:0 auto 28px;">
