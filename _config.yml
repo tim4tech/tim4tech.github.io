@@ -28,6 +28,11 @@ twitter_username: timefordrums
 github_username:  tim4tech
 unsplash_username: timothywford
 
+# Only these pages appear in the site header. Other pages can remain available
+# as references without being added to the navigation automatically.
+header_pages:
+  - about.markdown
+
 # Build settings
 theme: minima
 plugins:
