@@ -4,3 +4,8 @@
 
 layout: home
 ---
+
+<a class="live-banner" href="{{ "/tower300/" | relative_url }}">
+  <span class="live-banner__dot" aria-hidden="true"></span>
+  Live: Tower 300
+</a>

@@ -47,3 +47,46 @@ blockquote {
   vertical-align: text-top;
   display: inline-block;
 }
+
+// Live ride button at the top of the home page. Remove from index.markdown
+// once the ride is over.
+.live-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 10px 18px;
+  border: 1px solid #dc322f;
+  border-radius: 999px;
+  background-color: #fff;
+  color: #073642;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(7, 54, 66, .12);
+
+  &:visited {
+    color: #073642;
+  }
+
+  &:hover {
+    color: #dc322f;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(7, 54, 66, .18);
+  }
+}
+
+.live-banner__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dc322f;
+  animation: live-banner-flash 1.2s ease-in-out infinite;
+}
+
+@keyframes live-banner-flash {
+  50% { opacity: .2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-banner__dot { animation: none; }
+}

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training Calendar &middot; by tim</title>
+<meta name="description" content="Planned training rides, with routes on RideWithGPS and live tracking when a ride is rolling.">
+<meta property="og:title" content="Training Calendar">
+<meta property="og:description" content="Planned training rides, with routes on RideWithGPS and live tracking when a ride is rolling.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3l7 11h-4l6 10H7l6-10H9z' fill='%233f7a5c'/%3E%3Crect x='14.5' y='24' width='3' height='5' fill='%237a5c3e'/%3E%3C/svg%3E">
+
+<style>
+/* ---------------------------------------------------------------
+   Palette — forest: canopy greens, moss, bark, paper.
+   --------------------------------------------------------------- */
+:root {
+  --bg:          #f5f3ec;
+  --surface:     #fffdf7;
+  --surface-alt: #f0eee5;
+  --ink:         #1b2a21;
+  --ink-soft:    #55685b;
+  --ink-faint:   #8c9a90;
+  --line:        #e0e3d8;
+  --line-strong: #c7d0c2;
+  --canopy:      #1e3a2e;
+  --moss:        #3f7a5c;
+  --fern:        #6aa07f;
+  --amber:       #b0722c;
+  --bark:        #7a5c3e;
+  --rust:        #a04530;
+  --on-canopy:   #eef4ee;
+  --radius:      6px;
+  --shadow:      0 1px 2px rgba(27, 42, 33, .05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #0e1411;
+    --surface:     #151d18;
+    --surface-alt: #111815;
+    --ink:         #e3eae4;
+    --ink-soft:    #9db0a3;
+    --ink-faint:   #6d8073;
+    --line:        #24302a;
+    --line-strong: #33443a;
+    --canopy:      #14201a;
+    --moss:        #6fbf92;
+    --fern:        #8ed0ab;
+    --amber:       #d9a05c;
+    --bark:        #b99872;
+    --rust:        #d0765c;
+    --on-canopy:   #e3eae4;
+    --shadow:      none;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin: 0;
+}
+
+a { color: var(--moss); }
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------------------------------------------------------------
+   Masthead
+   --------------------------------------------------------------- */
+.masthead {
+  position: relative;
+  overflow: hidden;
+  background: var(--canopy);
+  color: var(--on-canopy);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.masthead .contours {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .16;
+  pointer-events: none;
+}
+
+.masthead .wrap {
+  position: relative;
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--fern);
+  margin: 0 0 10px;
+}
+
+.eyebrow a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+.eyebrow a:hover { border-bottom-color: currentColor; }
+
+.masthead h1 {
+  font-size: clamp(30px, 5vw, 44px);
+  color: var(--on-canopy);
+}
+
+.masthead p.tagline {
+  margin: 12px 0 0;
+  max-width: 46ch;
+  color: var(--fern);
+}
+
+/* ---------------------------------------------------------------
+   Toolbar
+   --------------------------------------------------------------- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 22px 0 18px;
+}
+
+.month-label {
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  min-width: 12ch;
+}
+
+.spacer { flex: 1 1 auto; }
+
+button.btn {
+  font: inherit;
+  font-size: 14px;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+
+button.btn:hover { color: var(--ink); border-color: var(--moss); }
+button.btn:focus-visible { outline: 2px solid var(--moss); outline-offset: 2px; }
+
+button.nav {
+  width: 34px;
+  padding: 6px 0;
+  line-height: 1;
+  font-size: 16px;
+}
+
+/* ---------------------------------------------------------------
+   Calendar grid — hairlines drawn by the 1px gap over a line-colored bed
+   --------------------------------------------------------------- */
+.cal {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--line);
+  box-shadow: var(--shadow);
+}
+
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+}
+
+.weekdays {
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.weekdays span {
+  background: var(--surface-alt);
+  padding: 9px 10px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.day {
+  background: var(--surface);
+  min-height: 112px;
+  padding: 7px 8px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.day.outside { background: var(--surface-alt); }
+.day.outside .daynum { color: var(--ink-faint); }
+
+.daynum {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.day.today .daynum {
+  color: var(--surface);
+  background: var(--moss);
+  border-radius: 999px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+
+/* Event chip — wraps to at most three lines, then clips */
+.chip {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 12.5px;
+  line-height: 1.35;
+  padding: 4px 6px 4px 8px;
+  border-radius: 3px;
+  background: var(--surface-alt);
+  border-left: 3px solid var(--kind, var(--moss));
+  overflow: hidden;
+  overflow-wrap: break-word;
+  transition: background .15s;
+}
+
+.chip:hover { background: var(--line); }
+.chip .dist { color: var(--ink-faint); white-space: nowrap; }
+.chip.live { border-left-color: var(--rust); }
+.chip.live::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--rust);
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* ---------------------------------------------------------------
+   Legend
+   --------------------------------------------------------------- */
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 14px 2px 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i {
+  width: 9px; height: 9px;
+  border-radius: 2px;
+  background: var(--kind);
+  display: inline-block;
+}
+
+/* ---------------------------------------------------------------
+   Agenda
+   --------------------------------------------------------------- */
+.agenda-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 46px 0 4px;
+}
+
+.agenda-head h2 { font-size: 21px; }
+
+.rides { list-style: none; margin: 0; padding: 0; }
+
+.ride {
+  display: flex;
+  gap: 18px;
+  padding: 20px 2px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ride:first-child { border-top: 1px solid var(--line); }
+
+.datebox {
+  flex: 0 0 58px;
+  text-align: center;
+  padding-top: 2px;
+  border-right: 1px solid var(--line);
+  margin-right: 2px;
+}
+
+.datebox .mo {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--kind, var(--moss));
+  font-weight: 600;
+}
+
+.datebox .dy {
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  font-size: 26px;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.datebox .dy.range {
+  font-size: 17px;
+  letter-spacing: -.02em;
+}
+
+.datebox .wd { font-size: 11px; color: var(--ink-faint); }
+
+.ride-body { flex: 1 1 auto; min-width: 0; }
+
+.ride-body h3 {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.ride-body h3 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.ride-body h3 a:hover { border-bottom-color: var(--moss); color: var(--moss); }
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.meta span { display: inline-flex; align-items: center; gap: 5px; }
+.meta svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.6; opacity: .75; }
+
+.notes {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+.tags { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+
+.tag {
+  font-size: 11px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--kind, var(--moss));
+  color: var(--kind, var(--moss));
+}
+
+.tag.live {
+  border-color: var(--rust);
+  color: var(--surface);
+  background: var(--rust);
+}
+
+.links { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+.linkbtn {
+  font-size: 13.5px;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 5px 11px;
+  transition: border-color .15s, color .15s;
+}
+
+.linkbtn:hover { border-color: var(--moss); color: var(--moss); }
+
+.linkbtn.primary {
+  background: var(--moss);
+  border-color: var(--moss);
+  color: var(--surface);
+}
+
+.linkbtn.primary:hover { background: var(--canopy); border-color: var(--canopy); color: var(--on-canopy); }
+
+@media (prefers-color-scheme: dark) {
+  .linkbtn.primary { color: #0e1411; }
+  .linkbtn.primary:hover { background: var(--fern); border-color: var(--fern); color: #0e1411; }
+  .tag.live { color: #0e1411; }
+  .day.today .daynum { color: #0e1411; }
+}
+
+.empty {
+  padding: 32px 2px;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--line);
+}
+
+/* ---------------------------------------------------------------
+   Footer
+   --------------------------------------------------------------- */
+.foot {
+  margin-top: 64px;
+  padding: 26px 0 40px;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.foot a { color: var(--ink-soft); }
+
+/* ---------------------------------------------------------------
+   Narrow screens: the grid compacts to dots, the agenda carries the detail
+   --------------------------------------------------------------- */
+@media (max-width: 700px) {
+  .wrap { padding: 0 16px; }
+  .masthead .wrap { padding-top: 36px; padding-bottom: 36px; }
+  .day { min-height: 62px; padding: 5px 4px; align-items: center; gap: 3px; }
+  .daynum { line-height: 1.3; }
+  .weekdays span { padding: 8px 4px; text-align: center; font-size: 10px; }
+  .chip {
+    display: block;
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border-radius: 999px;
+    border-left: none;
+    background: var(--kind, var(--moss));
+    text-indent: -9999px;
+  }
+  .chip.live { background: var(--rust); }
+  .chip.live::before { display: none; }
+  .ride { gap: 14px; }
+  .datebox { flex-basis: 48px; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <svg class="contours" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#6aa07f" stroke-width="1.25">
+      <path d="M-20 214 C 150 178, 300 236, 470 200 S 800 150, 980 190 1220 168 1220 168"/>
+      <path d="M-20 182 C 160 144, 320 206, 500 166 S 820 112, 1000 154 1220 130 1220 130"/>
+      <path d="M-20 150 C 170 110, 340 176, 530 132 S 840 74, 1020 118 1220 92 1220 92"/>
+      <path d="M-20 118 C 180 76, 360 146, 560 98 S 860 36, 1040 82 1220 54 1220 54"/>
+      <path d="M-20 86 C 190 42, 380 116, 590 64 S 880 -2, 1060 46 1220 16 1220 16"/>
+      <path d="M-20 54 C 200 8, 400 86, 620 30 S 900 -40, 1080 10 1220 -22 1220 -22"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow"><a href="/">&larr; by tim</a></p>
+    <h1>Training Calendar</h1>
+    <p class="tagline">What I&rsquo;m riding and when. Each ride links to its route on RideWithGPS &mdash; and to a live tracker once the wheels are turning.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="toolbar">
+    <button class="btn nav" id="prev" type="button" aria-label="Previous month">&lsaquo;</button>
+    <button class="btn nav" id="next" type="button" aria-label="Next month">&rsaquo;</button>
+    <span class="month-label" id="month-label" aria-live="polite"></span>
+    <span class="spacer"></span>
+    <button class="btn" id="today" type="button">Today</button>
+  </div>
+
+  <section class="cal" aria-label="Month view">
+    <div class="weekdays" aria-hidden="true">
+      <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+    </div>
+    <div class="days" id="days"></div>
+  </section>
+
+  <div class="legend" id="legend"></div>
+
+  <div class="agenda-head">
+    <h2 id="agenda-title">Upcoming rides</h2>
+    <span class="spacer"></span>
+    <button class="btn" id="toggle-past" type="button">Show past rides</button>
+  </div>
+
+  <ul class="rides" id="rides"></ul>
+
+  <footer class="foot">
+    <span>Routes on <a href="https://ridewithgps.com/">RideWithGPS</a>.</span>
+    <span>Plans shift with weather and legs.</span>
+  </footer>
+
+</main>
+
+<!-- =================================================================
+     Training events. This block is the single source of truth for the
+     page. Managed by .claude/scripts/training_events.py — hand-edits
+     are fine too, just keep it valid JSON.
+
+     Fields: date (YYYY-MM-DD, required), title (required), end (for a
+             multi-day entry), url, kind ("ride" or "event"), distance,
+             elevation, start, location, notes, tracker
+     ================================================================= -->
+<script type="application/json" id="training-events">
+[
+  {
+    "date": "2026-08-27",
+    "title": "North Hill Loop",
+    "url": "https://ridewithgps.com/routes/56866408",
+    "kind": "ride"
+  },
+  {
+    "date": "2026-09-24",
+    "end": "2026-09-29",
+    "title": "Tower 300",
+    "url": "https://ridewithgps.com/routes/56778774",
+    "kind": "event"
+  }
+]
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  var KINDS = {
+    ride:  { label: "Ride",  color: "#3f7a5c" },
+    event: { label: "Event", color: "#b0722c" }
+  };
+
+  var MONTHS = ["January","February","March","April","May","June",
+                "July","August","September","October","November","December"];
+  var MONTHS_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var WEEKDAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+  // --- data -----------------------------------------------------
+  var events = [];
+  try {
+    events = JSON.parse(document.getElementById("training-events").textContent);
+  } catch (err) {
+    console.error("Could not parse training events:", err);
+  }
+
+  events = events
+    .filter(function (e) { return e && e.date && e.title; })
+    .map(function (e) {
+      var p = e.date.split("-");
+      e._d = new Date(+p[0], +p[1] - 1, +p[2]);
+      // Multi-day entries carry an "end"; single-day ones end where they start.
+      var q = (e.end || e.date).split("-");
+      e._end = new Date(+q[0], +q[1] - 1, +q[2]);
+      if (e._end < e._d) e._end = e._d;
+      e._kind = KINDS[e.kind] ? e.kind : "ride";
+      return e;
+    })
+    .sort(function (a, b) {
+      return a._d - b._d || String(a.start || "").localeCompare(String(b.start || ""));
+    });
+
+  var byDay = {};
+  events.forEach(function (e) {
+    var d = new Date(e._d.getTime());
+    while (d <= e._end) {
+      var k = key(d);
+      (byDay[k] = byDay[k] || []).push(e);
+      d.setDate(d.getDate() + 1);
+    }
+  });
+
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // --- helpers --------------------------------------------------
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function key(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function color(e) { return KINDS[e._kind].color; }
+
+  function timeLabel(hhmm) {
+    var p = String(hhmm).split(":");
+    var h = +p[0], m = p[1] || "00";
+    if (isNaN(h)) return hhmm;
+    var suffix = h >= 12 ? "pm" : "am";
+    var h12 = h % 12 === 0 ? 12 : h % 12;
+    return h12 + (m === "00" ? "" : ":" + m) + " " + suffix;
+  }
+
+  function icon(path) {
+    return '<svg viewBox="0 0 24 24" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">' + path + "</svg>";
+  }
+
+  var ICON_DIST = icon('<circle cx="6" cy="17" r="3.4"/><circle cx="18" cy="17" r="3.4"/><path d="M6 17l4-8h5l3 8M9.5 9H13"/>');
+  var ICON_ELEV = icon('<path d="M3 19l6-11 4 6 2.5-3.5L21 19z"/>');
+  var ICON_TIME = icon('<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>');
+  var ICON_PLACE = icon('<path d="M12 21s6.5-6 6.5-10.5A6.5 6.5 0 0 0 5.5 10.5C5.5 15 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.3"/>');
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  // --- month grid -----------------------------------------------
+  var daysEl = document.getElementById("days");
+  var labelEl = document.getElementById("month-label");
+  var cursor = new Date(today.getFullYear(), today.getMonth(), 1);
+
+  // Open on the month holding the next ride, if there is one.
+  var upcoming = events.filter(function (e) { return e._end >= today; });
+  if (upcoming.length) {
+    cursor = new Date(upcoming[0]._d.getFullYear(), upcoming[0]._d.getMonth(), 1);
+  }
+
+  function renderMonth() {
+    labelEl.textContent = MONTHS[cursor.getMonth()] + " " + cursor.getFullYear();
+
+    var first = new Date(cursor.getFullYear(), cursor.getMonth(), 1);
+    var start = new Date(first);
+    start.setDate(1 - first.getDay());
+
+    // Only draw the weeks this month actually touches — no empty trailing row.
+    var daysInMonth = new Date(cursor.getFullYear(), cursor.getMonth() + 1, 0).getDate();
+    var cells = Math.ceil((first.getDay() + daysInMonth) / 7) * 7;
+
+    var html = "";
+    for (var i = 0; i < cells; i++) {
+      var d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
+      var k = key(d);
+      var cls = "day";
+      if (d.getMonth() !== cursor.getMonth()) cls += " outside";
+      if (d.getTime() === today.getTime()) cls += " today";
+
+      html += '<div class="' + cls + '">';
+      html += '<div class="daynum">' + d.getDate() + "</div>";
+
+      (byDay[k] || []).forEach(function (e) {
+        var href = e.tracker || e.url;
+        var tag = href ? "a" : "span";
+        var attrs = href ? ' href="' + esc(href) + '" target="_blank" rel="noopener"' : "";
+        var title = e.title + (e.distance ? " \u00b7 " + e.distance : "") + (e.tracker ? " \u00b7 tracking live" : "");
+        html += "<" + tag + ' class="chip' + (e.tracker ? " live" : "") + '"' + attrs +
+                ' style="--kind:' + color(e) + '" title="' + esc(title) + '">' +
+                esc(e.title) +
+                (e.distance ? ' <span class="dist">' + esc(e.distance) + "</span>" : "") +
+                "</" + tag + ">";
+      });
+
+      html += "</div>";
+    }
+    daysEl.innerHTML = html;
+  }
+
+  // --- agenda ---------------------------------------------------
+  var ridesEl = document.getElementById("rides");
+  var agendaTitle = document.getElementById("agenda-title");
+  var pastBtn = document.getElementById("toggle-past");
+  var showPast = false;
+
+  function metaRow(e) {
+    var bits = [];
+    if (e.distance)  bits.push("<span>" + ICON_DIST + esc(e.distance) + "</span>");
+    if (e.elevation) bits.push("<span>" + ICON_ELEV + esc(e.elevation) + "</span>");
+    if (e.start)     bits.push("<span>" + ICON_TIME + esc(timeLabel(e.start)) + "</span>");
+    if (e.location)  bits.push("<span>" + ICON_PLACE + esc(e.location) + "</span>");
+    return bits.length ? '<div class="meta">' + bits.join("") + "</div>" : "";
+  }
+
+  function spanDays(e) {
+    return Math.round((e._end - e._d) / 86400000) + 1;
+  }
+
+  // Single day: SEP / 27 / Sun.  Multi-day: SEP-OCT / 24-2 / 6 days.
+  function dateBox(e) {
+    var s = e._d, en = e._end;
+    if (en.getTime() === s.getTime()) {
+      return '<div class="mo">' + MONTHS_SHORT[s.getMonth()] + "</div>" +
+             '<div class="dy">' + s.getDate() + "</div>" +
+             '<div class="wd">' + WEEKDAYS[s.getDay()].slice(0, 3) + "</div>";
+    }
+    var mo = MONTHS_SHORT[s.getMonth()] +
+             (s.getMonth() !== en.getMonth() ? "\u2013" + MONTHS_SHORT[en.getMonth()] : "");
+    var n = spanDays(e);
+    return '<div class="mo">' + mo + "</div>" +
+           '<div class="dy range">' + s.getDate() + "\u2013" + en.getDate() + "</div>" +
+           '<div class="wd">' + n + " days</div>";
+  }
+
+  function rideItem(e) {
+    var c = color(e);
+    var href = e.tracker || e.url;
+
+    var head = href
+      ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(e.title) + "</a>"
+      : esc(e.title);
+
+    var tags = '<span class="tag" style="--kind:' + c + '">' + esc(KINDS[e._kind].label) + "</span>";
+    if (e.tracker) tags += '<span class="tag live">Tracking live</span>';
+
+    var links = "";
+    if (e.tracker) {
+      links += '<a class="linkbtn primary" href="' + esc(e.tracker) + '" target="_blank" rel="noopener">Follow live &rarr;</a>';
+      if (e.url) links += '<a class="linkbtn" href="' + esc(e.url) + '" target="_blank" rel="noopener">Planned route</a>';
+    } else if (e.url) {
+      links += '<a class="linkbtn primary" href="' + esc(e.url) + '" target="_blank" rel="noopener">View route &rarr;</a>';
+    }
+
+    return '<li class="ride">' +
+           '<div class="datebox" style="--kind:' + c + '">' + dateBox(e) + "</div>" +
+           '<div class="ride-body">' +
+             "<h3>" + head + "</h3>" +
+             metaRow(e) +
+             (e.notes ? '<p class="notes">' + esc(e.notes) + "</p>" : "") +
+             '<div class="tags">' + tags + "</div>" +
+             (links ? '<div class="links">' + links + "</div>" : "") +
+           "</div>" +
+         "</li>";
+  }
+
+  function renderAgenda() {
+    var list = showPast
+      ? events.slice().reverse().filter(function (e) { return e._end < today; })
+      : events.filter(function (e) { return e._end >= today; });
+
+    agendaTitle.textContent = showPast ? "Past rides" : "Upcoming rides";
+    pastBtn.textContent = showPast ? "Show upcoming" : "Show past rides";
+
+    ridesEl.innerHTML = list.length
+      ? list.map(rideItem).join("")
+      : '<li class="empty">' + (showPast ? "No rides logged yet." : "Nothing on the calendar right now.") + "</li>";
+  }
+
+  // --- legend ---------------------------------------------------
+  (function renderLegend() {
+    var used = {};
+    events.forEach(function (e) { used[e._kind] = true; });
+    var keys = Object.keys(KINDS).filter(function (k) { return used[k]; });
+    document.getElementById("legend").innerHTML = keys.map(function (k) {
+      return '<span><i style="--kind:' + KINDS[k].color + '"></i>' + KINDS[k].label + "</span>";
+    }).join("");
+  })();
+
+  // --- wiring ---------------------------------------------------
+  document.getElementById("prev").addEventListener("click", function () {
+    cursor.setMonth(cursor.getMonth() - 1);
+    renderMonth();
+  });
+
+  document.getElementById("next").addEventListener("click", function () {
+    cursor.setMonth(cursor.getMonth() + 1);
+    renderMonth();
+  });
+
+  document.getElementById("today").addEventListener("click", function () {
+    cursor = new Date(today.getFullYear(), today.getMonth(), 1);
+    renderMonth();
+  });
+
+  pastBtn.addEventListener("click", function () {
+    showPast = !showPast;
+    renderAgenda();
+  });
+
+  renderMonth();
+  renderAgenda();
+})();
+</script>
+
+</body>
+</html>

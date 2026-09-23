@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tower 300 &middot; by tim</title>
+<meta name="description" content="My first ultra mountain bike race: 300 miles and 25,800 ft through the Black Hills and Bear Lodge mountains. Follow along live.">
+<meta property="og:title" content="Tower 300">
+<meta property="og:description" content="My first ultra mountain bike race: 300 miles and 25,800 ft through the Black Hills and Bear Lodge mountains. Follow along live.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://tim4tech.github.io/images/tower300/devils-tower-watercolor.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M11 6h10l3 20H8z' fill='%23b8743a'/%3E%3Cpath d='M2 30c6-6 22-6 28 0z' fill='%231f3326'/%3E%3C/svg%3E">
+
+<style>
+/* ---------------------------------------------------------------
+   Palette — Black Hills: ponderosa pine, tower ochre, slate sky,
+   and the violet shadows from the painting.
+   --------------------------------------------------------------- */
+:root {
+  --bg:        #f3efe6;
+  --surface:   #fbf8f1;
+  --ink:       #1c2420;
+  --ink-soft:  #56605a;
+  --line:      #ddd6c7;
+  --pine:      #1f3326;
+  --fern:      #3f7355;
+  --ochre:     #b8743a;
+  --rust:      #8f4a25;
+  --slate:     #7f93a3;
+  --violet:    #4b3f72;
+  --string:    #8a7a63;
+  --shadow:    rgba(28, 36, 32, .22);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #10151a;
+    --surface:   #171e22;
+    --ink:       #e9e4d8;
+    --ink-soft:  #a6ab9f;
+    --line:      #2b3438;
+    --pine:      #9cc3a8;
+    --fern:      #7fb392;
+    --ochre:     #dd9a5a;
+    --rust:      #e3a574;
+    --slate:     #5b6e7c;
+    --violet:    #a99ad8;
+    --string:    #9c8d74;
+    --shadow:    rgba(0, 0, 0, .5);
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #10151a;
+  --surface:   #171e22;
+  --ink:       #e9e4d8;
+  --ink-soft:  #a6ab9f;
+  --line:      #2b3438;
+  --pine:      #9cc3a8;
+  --fern:      #7fb392;
+  --ochre:     #dd9a5a;
+  --rust:      #e3a574;
+  --slate:     #5b6e7c;
+  --violet:    #a99ad8;
+  --string:    #9c8d74;
+  --shadow:    rgba(0, 0, 0, .5);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--slate) 22%, var(--bg)) 0,
+      var(--bg) 520px);
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+a { color: var(--rust); text-underline-offset: 3px; }
+a:hover { color: var(--ochre); }
+
+
+/* ---------------------------------------------------------------
+   Hanging painting. The clothespin sits at ~55% across and the
+   string passes through it ~18% down the image. --w drives both.
+   --------------------------------------------------------------- */
+.line {
+  --w: min(420px, 78vw);
+  --grip-y: calc(var(--w) * 0.197);   /* 18% of image height (h = 1.0935w) */
+  --sag: 70px;                        /* how far the string dips at center */
+  position: relative;
+  padding-top: 24px;
+}
+
+.line svg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--sag);
+  top: calc(24px + var(--grip-y) - var(--sag));
+  overflow: visible;
+  pointer-events: none;
+}
+.line path {
+  fill: none;
+  stroke: var(--string);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.painting {
+  position: relative;
+  display: block;
+  width: var(--w);
+  height: auto;
+  margin: 0 auto;
+  /* shift left so the clothespin, not the image box, lands on center */
+  transform: translateX(calc(var(--w) * -0.05));
+  filter: drop-shadow(0 10px 14px var(--shadow));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .painting {
+    transform-origin: 55% 18%;
+    animation: sway 7s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { transform: translateX(calc(var(--w) * -0.05)) rotate(-1.2deg); }
+    50%      { transform: translateX(calc(var(--w) * -0.05)) rotate(1.2deg); }
+  }
+}
+
+/* ---------------------------------------------------------------
+   Text
+   --------------------------------------------------------------- */
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px 64px;
+}
+
+h1 {
+  margin: 28px 0 6px;
+  text-align: center;
+  font-size: clamp(2.5rem, 9vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.1;
+}
+h1 a {
+  color: var(--pine);
+  text-decoration: none;
+  background-image: linear-gradient(var(--ochre), var(--ochre));
+  background-size: 100% 4px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 4px;
+}
+h1 a:hover { color: var(--rust); }
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  margin: 14px 0 36px;
+  padding: 0;
+  list-style: none;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: .8125rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.stats li::before {
+  content: "▲";
+  margin-right: 6px;
+  font-size: .625rem;
+  color: var(--ochre);
+  vertical-align: 1px;
+}
+
+p { margin: 0 0 1.1em; }
+
+/* ---------------------------------------------------------------
+   Live tracker
+   --------------------------------------------------------------- */
+.tracker {
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.tracker h2 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  color: var(--pine);
+}
+.live-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--rust);
+  vertical-align: 3px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .live-dot { animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .3; } }
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 6px 20px -8px var(--shadow);
+}
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.tracker-note {
+  margin-top: 10px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: .875rem;
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------
+   Bike
+   --------------------------------------------------------------- */
+.bike {
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.bike h2 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  color: var(--pine);
+}
+.bike p { margin: 24px 0 0; }
+.bike-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.bike-media figure { margin: 0; }
+.bike-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px -10px var(--shadow), 0 2px 6px var(--shadow);
+}
+.loaded-bike { margin: 20px 0 0; }
+.loaded-bike img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px -10px var(--shadow), 0 2px 6px var(--shadow);
+}
+/* The card has a transparent cutout edge, so the shadow follows its shape. */
+.sleep-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: rotate(1.5deg);
+  filter: drop-shadow(0 8px 12px var(--shadow));
+}
+
+/* ---------------------------------------------------------------
+   Footer photo
+   --------------------------------------------------------------- */
+.photo-footer {
+  margin-top: 48px;
+}
+.photo-footer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px -10px var(--shadow), 0 2px 6px var(--shadow);
+}
+
+@media (max-width: 560px) {
+  body { font-size: 1.0625rem; }
+  .line { --sag: 44px; }
+  .map { height: 460px; }
+  .bike-media { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="line">
+  <svg viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M -20 0 Q 500 180 1020 0" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <img class="painting"
+       src="../images/tower300/devils-tower-watercolor.webp"
+       width="900" height="984"
+       alt="Watercolor painting of Devils Tower rising above dark pine forest and green hills, clipped to a string with a wooden clothespin.">
+</div>
+
+<main>
+  <h1><a href="https://ridewithgps.com/routes/57176439">Tower 300</a></h1>
+
+  <ul class="stats">
+    <li>300 miles</li>
+    <li>25,800 ft</li>
+    <li>73 mi single track</li>
+  </ul>
+
+  <p>When my tires hit ground Thursday morning at 6:05am, I'll be kicking off my first attempt at an ultra MTB race: The Tower 300. Meandering through the Northern Black Hills and Bear Lodge mountains, this route covers 300 total miles paired with 25,800 ft of elevation gain. 73 of these miles are technical single track, requiring a mountain bike with bag strategies and sleep systems I am not as practiced with, a fun way to expand my abilities!</p>
+
+  <p>I have not ridden a route this large before; I am both intimidated and inspired. Going into a ride like this, you would hope to feel as healthy as you ever have. Unfortunately, I have some lingering pain in my left leg… we will see how that affects my race. 😅 Regardless, I am excited to spend some time traversing what I consider home as leaves turn and temperatures drop. If you want to follow along with my ride, the live track is at <a href="https://maps.findmespot.com/s/GQF5#history/assets">maps.findmespot.com/s/GQF5</a>.</p>
+
+  <section class="tracker" id="live">
+    <h2><span class="live-dot" aria-hidden="true"></span>Live track</h2>
+    <div class="map">
+      <iframe src="https://maps.findmespot.com/s/GQF5#history/assets"
+              title="SPOT live tracker map for the Tower 300"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              allowfullscreen></iframe>
+    </div>
+    <p class="tracker-note">Map not loading? <a href="https://maps.findmespot.com/s/GQF5#history/assets" target="_blank" rel="noopener">Open the SPOT tracker in a new tab</a>.</p>
+  </section>
+
+  <section class="bike" id="bike">
+    <h2>The Rig</h2>
+    <div class="bike-media">
+      <figure class="bike-photo">
+        <img src="../images/tower300/salsa-rustler.webp"
+             width="1200" height="1200"
+             loading="lazy"
+             alt="Teal 2024 Salsa Rustler full-suspension mountain bike with Maxxis tires, standing on a gravel alley lined with green trees.">
+      </figure>
+      <figure class="sleep-card">
+        <img src="../images/tower300/sleep-system-watercolor.webp"
+             width="1200" height="854"
+             loading="lazy"
+             alt="Watercolor card of a packed bag holding a purple Big Agnes UL 25, an orange Big Agnes Zoom UL, and a red Big Agnes Bivy, each labeled by hand.">
+      </figure>
+    </div>
+
+    <p>I'll be riding a 2024 Salsa Rustler. My sleep system is entirely Big Agnes with bags from Revelate and Almsthre. My stats and routing are handled by a Wahoo Elemnt Roam bike computer.</p>
+
+    <figure class="loaded-bike">
+      <img src="../images/tower300/loaded-bike.webp"
+           width="1600" height="1216"
+           loading="lazy"
+           alt="The Salsa Rustler loaded with bikepacking bags, leaning on a boulder in tall grass beside a guardrail, with pines and yellowing trees behind.">
+    </figure>
+  </section>
+
+  <footer class="photo-footer">
+    <img src="../images/tower300/devils-tower-triptych.webp"
+         width="1600" height="672"
+         loading="lazy"
+         alt="Three photos side by side: yellow aspens and pines under a gray sky, Devils Tower rising above dark pine forest, and a foggy tree line above a golden meadow.">
+  </footer>
+</main>
+
+</body>
+</html>
