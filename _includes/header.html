@@ -20,7 +20,9 @@
       </label>
 
       <div class="trigger">
+        {%- comment -%} Hidden until the training calendar is ready.
         <a class="page-link" href="{{ "/training/" | relative_url }}">Training</a>
+        {%- endcomment -%}
         {%- for path in page_paths -%}
           {%- assign my_page = site.pages | where: "path", path | first -%}
           {%- if my_page.title -%}
