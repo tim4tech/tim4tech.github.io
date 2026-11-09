@@ -48,45 +48,33 @@ blockquote {
   display: inline-block;
 }
 
-// Live ride button at the top of the home page. Remove from index.markdown
-// once the ride is over.
-.live-banner {
+// Upcoming event link at the top of the home page.
+.upcoming-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 30px;
-  padding: 10px 18px;
-  border: 1px solid #dc322f;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 4px 12px;
+  border: 1px solid $grey-color-light;
   border-radius: 999px;
-  background-color: #fff;
-  color: #073642;
-  font-weight: 600;
+  color: $grey-color-dark;
+  font-size: 14px;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(7, 54, 66, .12);
 
   &:visited {
-    color: #073642;
+    color: $grey-color-dark;
   }
 
   &:hover {
-    color: #dc322f;
+    border-color: $grey-color;
+    color: $text-color;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(7, 54, 66, .18);
   }
 }
 
-.live-banner__dot {
-  width: 10px;
-  height: 10px;
+.upcoming-link__dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background-color: #dc322f;
-  animation: live-banner-flash 1.2s ease-in-out infinite;
-}
-
-@keyframes live-banner-flash {
-  50% { opacity: .2; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .live-banner__dot { animation: none; }
+  background-color: $grey-color;
 }

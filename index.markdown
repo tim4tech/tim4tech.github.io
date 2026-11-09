@@ -5,7 +5,7 @@
 layout: home
 ---
 
-<a class="live-banner" href="{{ "/tower300/" | relative_url }}">
-  <span class="live-banner__dot" aria-hidden="true"></span>
-  Live: Tower 300
+<a class="upcoming-link" href="{{ "/st-croix-winter-ultra/" | relative_url }}">
+  <span class="upcoming-link__dot" aria-hidden="true"></span>
+  Upcoming: St Croix Winter Ultra
 </a>

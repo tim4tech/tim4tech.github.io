@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tower 300 &middot; by tim</title>
+<meta name="description" content="The Tower 300 write-up is on its way.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M11 6h10l3 20H8z' fill='%23b8743a'/%3E%3Cpath d='M2 30c6-6 22-6 28 0z' fill='%231f3326'/%3E%3C/svg%3E">
+
+<style>
+/* Same Black Hills palette and hanging painting as /tower300/. */
+:root {
+  --bg:       #f3efe6;
+  --ink:      #1c2420;
+  --ink-soft: #56605a;
+  --pine:     #1f3326;
+  --ochre:    #b8743a;
+  --slate:    #7f93a3;
+  --string:   #8a7a63;
+  --shadow:   rgba(28, 36, 32, .22);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #10151a;
+    --ink:      #e9e4d8;
+    --ink-soft: #a6ab9f;
+    --pine:     #9cc3a8;
+    --ochre:    #dd9a5a;
+    --slate:    #5b6e7c;
+    --string:   #9c8d74;
+    --shadow:   rgba(0, 0, 0, .5);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--slate) 22%, var(--bg)) 0,
+      var(--bg) 520px);
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+.line {
+  --w: min(420px, 78vw);
+  --grip-y: calc(var(--w) * 0.197);   /* 18% of image height (h = 1.0935w) */
+  --sag: 70px;                        /* how far the string dips at center */
+  position: relative;
+  padding-top: 24px;
+}
+.line svg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--sag);
+  top: calc(24px + var(--grip-y) - var(--sag));
+  overflow: visible;
+  pointer-events: none;
+}
+.line path {
+  fill: none;
+  stroke: var(--string);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.painting {
+  position: relative;
+  display: block;
+  width: var(--w);
+  height: auto;
+  margin: 0 auto;
+  /* shift left so the clothespin, not the image box, lands on center */
+  transform: translateX(calc(var(--w) * -0.05));
+  filter: drop-shadow(0 10px 14px var(--shadow));
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px 64px;
+}
+
+h1 {
+  display: table;
+  margin: 28px auto 12px;
+  padding-bottom: 4px;
+  border-bottom: 4px solid var(--ochre);
+  color: var(--pine);
+  font-size: clamp(2.5rem, 9vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1.1;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 44px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: .875rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.loading p { margin: 0; }
+.dots span { margin-left: 1px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .painting {
+    transform-origin: 55% 18%;
+    animation: sway 7s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { transform: translateX(calc(var(--w) * -0.05)) rotate(-1.2deg); }
+    50%      { transform: translateX(calc(var(--w) * -0.05)) rotate(1.2deg); }
+  }
+  .dots span { animation: blink 1.4s ease-in-out infinite; }
+  .dots span:nth-child(2) { animation-delay: .2s; }
+  .dots span:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 50% { opacity: .15; } }
+}
+
+.photo-footer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px -10px var(--shadow), 0 2px 6px var(--shadow);
+}
+
+@media (max-width: 560px) {
+  .line { --sag: 44px; }
+}
+</style>
+</head>
+<body>
+
+<div class="line">
+  <svg viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M -20 0 Q 500 180 1020 0" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <img class="painting"
+       src="{{ "/images/tower300/devils-tower-watercolor.webp" | relative_url }}"
+       width="900" height="984"
+       alt="Watercolor painting of Devils Tower rising above dark pine forest and green hills, clipped to a string with a wooden clothespin.">
+</div>
+
+<main>
+  <h1>Tower 300</h1>
+  <div class="loading" role="status">
+    {{ content }}<span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>
+  </div>
+
+  <footer class="photo-footer">
+    <img src="{{ "/images/tower300/devils-tower-triptych.webp" | relative_url }}"
+         width="1600" height="672"
+         alt="Three photos side by side: yellow aspens and pines under a gray sky, Devils Tower rising above dark pine forest, and a foggy tree line above a golden meadow.">
+  </footer>
+</main>
+
+</body>
+</html>
